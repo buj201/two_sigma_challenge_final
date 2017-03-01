@@ -1,0 +1,13 @@
+plt.rc('text', usetex=True)
+
+f, axarr = plt.subplots(2, sharex=True, figsize=(12,12))
+axarr[0].plot(df.index, predictions, color='k', label='Predicted Trip Count- R^2 = {0:.3f}'.format(lr.score(df[baseline_features],df[target])))
+axarr[0].plot(df.index,df['Trip Count'], color='b')
+axarr[0].set_ylabel('Trip Counts')
+axarr[0].set_title('Trip counts with baseline model')
+axarr[0].legend(loc='upper left')
+axarr[1].plot(df.index,df['Trip Count'] - predictions, color='g', label='Residual from baseline')
+axarr[1].set_ylabel('Trip Counts')
+axarr[1].set_xlabel('Date')
+axarr[1].set_title(r'Residual (from baseline)')
+axarr[1].legend(loc="upper left")
