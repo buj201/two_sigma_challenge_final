@@ -1,4 +1,4 @@
-.PHONY: clean data s3_upload
+.PHONY: clean data models plots test_scores
 
 #################################################################################
 # COMMANDS                                                                      #
@@ -14,10 +14,18 @@ data:
 models:
 	python -m src.models.train_model
 
+##Make plots and get training set scores
+plots:
+	python -m src.visualization.visualize
+
+##Get test set scores
+test_scores:
+	python -m src.models.get_test_set_scores
 
 ## Delete all compiled Python files
 clean:
 	find . -name "*.pyc" -exec rm {} \;
+
 
 
 #################################################################################
