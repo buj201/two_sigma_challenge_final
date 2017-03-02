@@ -5,6 +5,7 @@ import requests
 import pandas as pd
 from pandas.io.json import json_normalize
 import numpy as np
+import dotenv
 
 def get_bike_data(project_dir):
     ''' Get raw bike share data and saw in data/raw directory.
@@ -66,7 +67,7 @@ def get_all_year_data(year):
         url = url + '&limit=1000&offset={}'.format(offset*1000+1)
 
         # replace 'myToken' with the actual token, below
-        headers = {'token': 'TzFmshIEmgvthbzMdJnlOBcxykLlHPDZ'}
+        headers = {'token': os.getenv('NOAA_TOKEN')}
         response = requests.get(url, headers = headers)
 
         print 'Year: {}, Offset:{}, Response: {}'.format(year, offset, response)
@@ -124,5 +125,7 @@ def get_all_years_data(year_range):
 
 if __name__ == '__main__':
     project_dir = os.path.join(os.path.dirname(__file__), os.pardir, os.pardir)
+    dotenv_path = os.path.join(project_dir, '.env')
+    dotenv.load_dotenv(dotenv_path)
     get_weather_data(project_dir)
     get_bike_data(project_dir)

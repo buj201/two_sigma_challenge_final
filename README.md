@@ -11,7 +11,7 @@ This project was completed as part of a challenge task for the Two Sigma Data fo
 The envisioned use case (and induced constraints on the project) are:
 - Models will be used to forecast demand. This assumes that the CitiBike system needs to regularly take bikes out of circulation for maintenance. If demand can be forecasted accurately, CitiBike may be able to predicts dates with low demand and chose those days to take bikes out of circulation for maintenance.
 - The assumptions implied by features in the final model are:
-    * Bike trip are logged one week after the trip start date. This seems to be a very conservative assumption (and if more information were available on data availability, new lag features could be tested).
+    * Bike trips are logged one week after the trip start date. This seems to be a very conservative assumption (and if more information were available on data availability, new lag features could be tested).
     * Weather predictions are essentially the same as actual weather conditions. This is a very liberal assumption, but actual weather condition data was available through a NOAA API, and (given time constraints for this project) robust datasets on past weather forecasts were not found. With additional time, the model would ideally be retrained on weather forecasts (with the appropriate time delta to account for this use case).
 
 
@@ -24,7 +24,7 @@ Project Organization
     ├── data
     │   ├── external       <- Data from third party sources.
     │   ├── processed      <- The final, canonical data sets
-    │   ├── interim      <- Intermediate processed data.
+    │   ├── interim        <- Intermediate processed data.
     │   └── raw            <- The original, immutable data dump.
     │
     ├── models             <- Trained and serialized models and model summaries
@@ -58,6 +58,8 @@ Project Organization
 
 Reproducing Project
 ------------
+
+Set up: Create a '.env' file in the project directory including `NOAA_TOKEN='api_key'`, where `api_key` is your API Key for the NOAA Climate Data Online API.
 
 1. Run `make data` to get and clean the raw 2016 citibike trip data, get and clean the NOAA data through their API, then merge and save the train/test splits for these datas.
 2. Run `make models` to train, pickle, and save models. Note the baseline (simple regression) model is not pickled since the run time is trivial.

@@ -1,4 +1,4 @@
-.PHONY: clean data models plots test_scores
+.PHONY: clean data models plots test_scores report
 
 #################################################################################
 # COMMANDS                                                                      #
@@ -21,6 +21,9 @@ plots:
 ##Get test set scores
 test_scores:
 	python -m src.models.get_test_set_scores
+
+report:
+	cd reports && pdflatex report.tex && rm report.{aux,log,out}
 
 ## Delete all compiled Python files
 clean:
