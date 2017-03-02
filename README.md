@@ -9,10 +9,10 @@ Two Sigma Data Clinic Data Test
 This project was completed as part of a challenge task for the Two Sigma Data for Good fellowship. The project uses the CitiBike trip data, plus external NOAA daily weather data, to build a **predictive model of the number of bike trips taken per day**.
 
 The envisioned use case (and induced constraints on the project) are:
-    - Models will be used to forecast demand. This assumes that the CitiBike system needs to regularly take bikes out of circulation for maintenance. If demand can be forecasted accurately, CitiBike may be able to predicts dates with low demand and chose those days to take bikes out of circulation for maintenance.
-    - The assumptions implied by features in the final model are:
-        * Bike trip are logged one week after the trip start date. This seems to be a very conservative assumption (and if more information were available on data availability, new lag features could be tested).
-        * Weather predictions are essentially the same as actual weather conditions. This is a very liberal assumption, but actual weather condition data was available through a NOAA API, and (given time constraints for this project) robust datasets on past weather forecasts were not found. With additional time, the model would ideally be retrained on weather forecasts (with the appropriate time delta to account for this use case).
+- Models will be used to forecast demand. This assumes that the CitiBike system needs to regularly take bikes out of circulation for maintenance. If demand can be forecasted accurately, CitiBike may be able to predicts dates with low demand and chose those days to take bikes out of circulation for maintenance.
+- The assumptions implied by features in the final model are:
+    * Bike trip are logged one week after the trip start date. This seems to be a very conservative assumption (and if more information were available on data availability, new lag features could be tested).
+    * Weather predictions are essentially the same as actual weather conditions. This is a very liberal assumption, but actual weather condition data was available through a NOAA API, and (given time constraints for this project) robust datasets on past weather forecasts were not found. With additional time, the model would ideally be retrained on weather forecasts (with the appropriate time delta to account for this use case).
 
 
 Project Organization
