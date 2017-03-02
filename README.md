@@ -4,9 +4,9 @@ two_sigma_challenge_final
 Two Sigma Data Clinic Data Test
 ------------
 
-## Project Description
+### Project Description
 
-This project was completed as part of a challenge task for the Two Sigma Data for Good fellowship. The project uses the CitiBike trip data, plus external NOAA daily weather data, to build a *predictive model of the number of bike trips taken per day*.
+This project was completed as part of a challenge task for the Two Sigma Data for Good fellowship. The project uses the CitiBike trip data, plus external NOAA daily weather data, to build a **predictive model of the number of bike trips taken per day**.
 
 The envisioned use case (and induced constraints on the project) are:
     - Models will be used to forecast demand. This assumes that the CitiBike system needs to regularly take bikes out of circulation for maintenance. If demand can be forecasted accurately, CitiBike may be able to predicts dates with low demand and chose those days to take bikes out of circulation for maintenance.
@@ -50,7 +50,7 @@ Project Organization
     │   │
     │   ├── models         <- Scripts to train models and then use trained models to make
     │   │   │                 predictions
-    │   │   ├── predict_model.py
+    │   │   ├── get_test_set_scores.py
     │   │   └── train_model.py
     │   │
     │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
